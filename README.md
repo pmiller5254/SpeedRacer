@@ -7,3 +7,9 @@ On our site, a user will be able to create a profile, with which they will inter
 Entries will be small, card-like elements which contain information about the gamer (their SpeedRacer profile, twitch/twitter/youtube links, etc.), the game being played, links to the stream where it happened, a short description of the circumstances surrounding the video, and the completion statistics such as time, percentage, hits taken, etc. These entries can be about anything from Super Mario 64 speedruns, to Dark Souls no damage runs, to World of Warcraft world-first boss kills!
 
 In the future, the app will support video players (complete with timestamps) on the site to view the record breaking event and a moderation team to review and verify such entries.
+
+## User Stories
+
+## Wireframes
+
+## ERD
