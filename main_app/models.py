@@ -26,8 +26,9 @@ class Player(Model):
 class Game(Model):
 
     title = CharField(max_length=150)
-    release_date = models.IntegerField(default=0)
+    release_date = CharField(max_length=70)
     genre = CharField(max_length=50)
+    cover_img = CharField(max_length=500)
 
     def __str__(self):
         return self.title
