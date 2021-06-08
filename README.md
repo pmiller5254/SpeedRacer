@@ -11,5 +11,7 @@ In the future, the app will support video players (complete with timestamps) on 
 ## User Stories
 
 ## Wireframes
-
+![](main_app/static/images/6673AA83-0D1B-4CF5-AA69-C8779BC6029A_1_105_c.jpeg)
+![](main_app/static/images/7A0D3FAD-B9EC-4DB5-8373-C74D551B133B_1_105_c.jpeg)
 ## ERD
+![](main_app/static/images/5A5E6F22-7441-42CF-95C7-69D6E773E21A_1_105_c.jpeg)
