@@ -12,16 +12,6 @@ from django.db.models.fields import IntegerField
 
 # Create your models here.
 
-class Player(Model):
-    name = CharField(max_length=50)
-    img = CharField(max_length=500)
-    bio = TextField(max_length=500)
-
-    def __str__(self):
-       return self.name
-
-    class Meta:
-        ordering = ['name']
 
 class Game(Model):
 
@@ -29,10 +19,24 @@ class Game(Model):
     release_date = CharField(max_length=70)
     genre = CharField(max_length=50)
     cover_img = CharField(max_length=500)
+    
 
     def __str__(self):
         return self.title
 
+class Player(Model):
+    name = CharField(max_length=50)
+    img = CharField(max_length=500)
+    bio = TextField(max_length=500)
+    games = ManyToManyField(Game)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user")
+    
+    def __str__(self):
+       return self.name
+
+    class Meta:
+        ordering = ['name']
 
 
 class Record(Model):
@@ -40,7 +44,7 @@ class Record(Model):
     player = models.ForeignKey(
         Player, on_delete=models.CASCADE, related_name="player")
     game = models.ForeignKey(
-        Game, on_delete=models.CASCADE, related_name="player")
+        Game, on_delete=models.CASCADE, related_name="game")
     date = CharField(max_length=150)
     speed = IntegerField(default=0)
     description = TextField(max_length=1000)

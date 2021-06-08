@@ -3,11 +3,15 @@
 <div class="games_list row">
     {% for game in games %}
     <div class="card col-sm-4" style="width: 18rem; margin: auto;">
-        <img src="{{game.cover_img}}" class="card-img-top" alt="{{game.title}}">
-        <div class="card-body">
+        <div class="card-image">
+           <figure class="image is-3by4"> 
+               <img src="{{game.cover_img}}"alt="{{game.title}}">
+            </figure>
+        </div>
+        <div class="card-content">
           <h5 class="card-title">{{game.title}}</h5>
           <p class="card-text">{{game.release_date}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="{% url 'game_details' game.pk %}" class="btn btn-primary">View</a>
         </div>
       </div>
     {% endfor %}
