@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="title">Home</h1>
-<div class="games_list">
+<div class="games_list row">
     {% for game in games %}
-    <div class="card" style="width: 18rem;">
+    <div class="card col-sm-4" style="width: 18rem; margin: auto;">
         <img src="{{game.cover_img}}" class="card-img-top" alt="{{game.title}}">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">{{game.title}}</h5>
+          <p class="card-text">{{game.release_date}}</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>

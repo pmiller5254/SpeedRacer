@@ -31,3 +31,12 @@ class Games(TemplateView):
         context = super().get_context_data(**kwargs)
         context["games"] = Game.objects.all() 
         return context
+
+class GameDetail(DetailView):
+    model = Game
+    template_name ="details.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context ["games"] = Game.objects.all()
+        return context
