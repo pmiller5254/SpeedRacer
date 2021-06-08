@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="title">Home</h1>
-<div class="games_list row">
+<div class="games_list columns">
     {% for game in games %}
-    <div class="card col-sm-4" style="width: 18rem; margin: auto;">
+    <div class="card column is-4" style="width: 18rem; margin: auto;">
         <div class="card-image">
            <figure class="image is-3by4"> 
                <img src="{{game.cover_img}}"alt="{{game.title}}">
