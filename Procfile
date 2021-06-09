@@ -1,1 +1,1 @@
-web: gunicorn speedrace.io.wsgi
+web: gunicorn speedracer.wsgi
