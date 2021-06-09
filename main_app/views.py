@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 # import models
-from .models import Player, Game, Record
+from .models import Player, Game, Record, User
 # Create your views here.
 
 class Home(TemplateView):
@@ -41,17 +41,22 @@ class PlayerDetail(DetailView):
     model = Player
     template_name = "player_details.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["player"] = Player.objects.filter()
+
+
 class RecordCreate(CreateView):
     model = Record
-    fields = ['player', 'game', 'date', 'speed', 'description']
+    fields = ['game', 'date', 'speed', 'description']
     template_name = "record_create.html"
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.player = self.request.user.player.first()
         return super(RecordCreate, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse('game_details', kwargs={'pk': self.object.pk})
+        return reverse('game_details', kwargs={'pk': self.object.game.pk})
 
 class Signup(View):
 
@@ -61,9 +66,14 @@ class Signup(View):
         return render(request, "registration/signup.html", context)
 
     def post(self, request):
+        
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            Player.objects.create(
+                user = user,
+                name = request.POST["username"],
+            )
             login(request, user)
             return redirect("home")
         else:

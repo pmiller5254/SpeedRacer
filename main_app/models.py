@@ -30,7 +30,7 @@ class Player(Model):
     bio = TextField(max_length=500)
     games = ManyToManyField(Game)
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user")
+        User, on_delete=models.CASCADE, related_name="player")
     
     def __str__(self):
        return self.name
@@ -45,7 +45,7 @@ class Record(Model):
         Player, on_delete=models.CASCADE, related_name="player")
     game = models.ForeignKey(
         Game, on_delete=models.CASCADE, related_name="game")
-    date = CharField(max_length=150)
+    date = DateTimeField()
     speed = IntegerField(default=0)
     description = TextField(max_length=1000)
 

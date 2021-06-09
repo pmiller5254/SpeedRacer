@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
     <h1>{{player.name}}</h1>
-    
+
+    <a href="{% url 'record_create' player.pk %}">New Record</a>
+    <form action="{% url 'record_create' player.pk %}">
+        {% csrf_token %}
+    </form>
 {% endblock %}
