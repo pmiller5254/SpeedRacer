@@ -6,14 +6,24 @@
     </div>
 </div>
 
-<h1>{{game.title}}</h1>
+<h1 class="title">{{game.title}}</h1>
+<div class="container is-flex-direction-row">
+    <div class="records">
+        {% for record in game.records.all %}
+        <div class="box" style="width: 18rem; background-color: firebrick;">
+            <h1>{{record.player}}</h1>
+            <h1>{{record.description}}</h1>
+            <h1>{{record.game}}</h1>
+        </div>
+        {% endfor %}
+    </div>
 
-{% for record in game.records.all %}
-<div class="box" style="width: 18rem; background-color: firebrick;">
-    <h1>{{record.player}}</h1>
-    <h1>{{record.description}}</h1>
-    <h1>{{record.game}}</h1>
+    <div class="players">
+        {% for record in game.records.all %}
+        <div class="box" style="width: 18rem; background-color: firebrick;">
+            <h1>{{record.player.name}}</h1>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
-
 {% endblock %}

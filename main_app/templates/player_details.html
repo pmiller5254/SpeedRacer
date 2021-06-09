@@ -2,19 +2,30 @@
 
     <h1>{{player.name}}</h1>
 
-    <a href="{% url 'record_create' player.pk %}">New Record</a>
+    <a class="button" href="{% url 'record_create' player.pk %}">New Record</a>
     <form action="{% url 'record_create' player.pk %}">
         {% csrf_token %} {{ form.as_p }}
     </form>
-    {% for record in player.records.all %}
-    <div class="box" style="width: 18rem; background-color: firebrick;">
-        <h1>{{record.player}}</h1>
-        <h1>{{record.description}}</h1>
-        <h1>{{record.game}}</h1>
-        <a href="{% url 'record_update' record.pk %}">Edit</a>
-        <a href="{% url 'record_delete' record.pk %}">Delete</a>
-    </div>
-{% endfor %}
 
+    <div>
+        {% for record in player.records.all %}
+        <div class="box is-flex-direction-row" style="width: 30rem; background-color: firebrick; height: 10rem;">
+            <div class="picture">
+                <img class="image is-96x96" src="{{ record.game.cover_img }}" alt="">
+                <p>{{record.game}}</p>
+            </div>
+            <div style="float: right;">   
+                <div>
+                    <h1>{{record.player}}</h1>
+                    <h1>{{record.description}}</h1>
+                </div>
+                <div class="buttons">
+                    <a class="button" href="{% url 'record_update' record.pk %}">Edit</a>
+                    <a class="button" href="{% url 'record_delete' record.pk %}">Delete</a>
+                </div>
+            </div> 
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

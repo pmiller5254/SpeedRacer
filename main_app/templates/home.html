@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="title">Home</h1>
-<div class="games_list columns">
+<div class="games_list columns container">
     {% for game in games %}
-    <div class="card column is-4" style="width: 18rem; margin: auto;">
+    <a class="home-games" href="{% url 'game_details' game.pk %}">
+    <div class="card column is-4 has-background-danger-light" style="width: 18rem; margin: auto;">
         <div class="card-image">
            <figure class="image is-3by4"> 
                <img src="{{game.cover_img}}"alt="{{game.title}}">
@@ -11,9 +12,9 @@
         <div class="card-content">
           <h5 class="card-title">{{game.title}}</h5>
           <p class="card-text">{{game.release_date}}</p>
-          <a href="{% url 'game_details' game.pk %}" class="btn btn-primary">View</a>
         </div>
       </div>
+    </a>
     {% endfor %}
 </div>
 

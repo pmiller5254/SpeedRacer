@@ -4,10 +4,45 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background-color: lightslategrey;
 }
 
 .billboard{
     border: 2px solid gray;
+}
+
+.container{
+    
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.home-games{
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+
+.title{
+    position: relative;
+    margin: auto;
+    left: 45%;
+}
+
+.records{
+    margin: 0 auto;
+    display: inline-block;
+    background-color: hsl(347, 90%, 96%);
+    width: 40%;
+    border: 3px solid pink;
+}
+
+.players{
+    margin:0 auto;
+    display: inline-block;
+    width: 40%;
+    border: 3px solid springgreen;
+    justify-self: flex-end;
 }
