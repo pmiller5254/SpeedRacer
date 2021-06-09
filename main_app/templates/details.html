@@ -1,11 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="columns is-mobile">
-    <div class="column is-10 is-offset-1 billboard">
+    <div class="column is-10 is-offset-1 billboard" style="background-image: url('{{game.cover_img}}'); background-repeat: no-repeat; background-size: cover;">
         <img src="{{ game.cover_img }}" alt="">
     </div>
 </div>
 
 <h1>{{game.title}}</h1>
+
+{% for record in game.records.all %}
+<div class="box" style="width: 18rem; background-color: firebrick;">
+    <h1>{{record.player}}</h1>
+    <h1>{{record.description}}</h1>
+    <h1>{{record.game}}</h1>
+</div>
+{% endfor %}
 
 {% endblock %}

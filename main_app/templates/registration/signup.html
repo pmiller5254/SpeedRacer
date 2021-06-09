@@ -2,7 +2,7 @@
 <h1 class="title">Sign up</h1>
 
 <form method="post" action="{% url 'signup' %}">
-  {% csrf_token %}
+  {% csrf_token %}{{ form.errors }}
     <p>
         <label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username"> 
     </p>

@@ -29,8 +29,8 @@ class Player(Model):
     img = CharField(max_length=500)
     bio = TextField(max_length=500)
     games = ManyToManyField(Game)
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="player")
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE)
     
     def __str__(self):
        return self.name
@@ -42,9 +42,9 @@ class Player(Model):
 class Record(Model):
 
     player = models.ForeignKey(
-        Player, on_delete=models.CASCADE, related_name="player")
+        Player, on_delete=models.CASCADE, related_name="records")
     game = models.ForeignKey(
-        Game, on_delete=models.CASCADE, related_name="game")
+        Game, on_delete=models.CASCADE, related_name="records")
     date = DateTimeField()
     speed = IntegerField(default=0)
     description = TextField(max_length=1000)

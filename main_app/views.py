@@ -36,14 +36,13 @@ class GameDetail(DetailView):
     model = Game
     template_name ="details.html"
 
+    
+
 
 class PlayerDetail(DetailView):
     model = Player
     template_name = "player_details.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["player"] = Player.objects.filter()
 
 
 class RecordCreate(CreateView):
@@ -52,11 +51,26 @@ class RecordCreate(CreateView):
     template_name = "record_create.html"
 
     def form_valid(self, form):
-        form.instance.player = self.request.user.player.first()
+        form.instance.player = self.request.user.player
         return super(RecordCreate, self).form_valid(form)
 
     def get_success_url(self):
         return reverse('game_details', kwargs={'pk': self.object.game.pk})
+
+class RecordUpdate(UpdateView):
+    model = Record
+    fields = ['date', 'speed', 'description']
+    template_name = "record_update.html"
+
+    def get_success_url(self):
+        return reverse('player_details', kwargs={'pk': self.object.player.pk})
+
+class RecordDelete(DeleteView):
+    model = Record
+    template_name = "record_delete_confirmation.html"
+    
+    def get_success_url(self):
+        return reverse('player_details', kwargs={'pk': self.object.player.pk})
 
 class Signup(View):
 
@@ -77,7 +91,8 @@ class Signup(View):
             login(request, user)
             return redirect("home")
         else:
-            return redirect("signup")
+            context = {"form": form}
+            return render(request, "registration/signup.html", context)
 
 class Login(View):    
     def get(request):
