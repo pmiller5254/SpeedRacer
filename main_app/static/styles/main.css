@@ -9,6 +9,10 @@ body {
     background-color: #D0CDD7;
 }
 
+.navv{
+    background-color: #416165;
+}
+
 .billboard{
     border: 2px solid #416165;
 }
@@ -102,10 +106,11 @@ body {
 }
 
 .entry{
-    background-color: hsl(347, 90%, 96%);
-    border: 2px solid firebrick;
+    background-color: #ACB0BD;
+    border: 2px solid #416165;
     position: relative;
     width: 35rem;
+    height: 12rem;
     display: flex;
     align-items: center;
 }
@@ -116,7 +121,14 @@ body {
 }
 
 .info{
+    align-self: flex-start;
     margin-left: 10px;
+    padding: 20px;
+}
+.date{
+    color: #416165;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .profile{
@@ -148,9 +160,22 @@ body {
 }
 
 .pic{
-    border: .5px solid #D0CDD7;
+    border: .2px solid #D0CDD7;
     display: flex;
+    width: auto;
+    height: auto;
     max-width: 96px;
+    max-height: 128px;
+}
+.gamers{
+    border: .1px solid #D0CDD7;
+    width: 48px;
+    height: 48px;
+    transition: all .2s;
+}
+.gamers:hover{
+    width: 60px;
+    height: 60px;
 }
 
 .image-box{

@@ -30,13 +30,13 @@
         <div>
             <h2 class="head">{{ game.title }} Players</h2>
         </div>
-        {% for record in game.records.all %}
         <div class="box game-entry">
+        {% for record in game.records.all %}
             <a href="{% url 'player_details' record.player.pk %}">
-                <h1>{{record.player.name}}</h1>
+                <img class="gamers" src="{{ record.player.img }}" alt="{{ record.player.name }}">
             </a>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

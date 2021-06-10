@@ -16,7 +16,7 @@
     <title>SpeedRacer.io - Beat that!</title>
 </head>
 <body>
-    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <nav class="navbar navv" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -28,7 +28,7 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a href="{% url 'home' %}" class="navbar-item has-text-danger">
+            <a href="{% url 'home' %}" class="navbar-item has-text-dark">
               <strong>SPDRCR.io</strong>
             </a>
       
@@ -37,11 +37,11 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                      <a href=" {% url 'player_details' user.player.pk %}" class="button is-danger is-outlined">
+                      <a href=" {% url 'player_details' user.player.pk %}" class="button is-info is-outlined">
                         <strong>{{ user.username }} </strong>
                       </a>
-                      <a class="button is-outlined is-danger" href="{% url 'record_create' user.player.pk %}"><strong>New Record</strong> </a>
-                        <a href=" {% url 'logout' %}" class="button is-danger is-outlined">
+                      <a class="button is-outlined is-info" href="{% url 'record_create' user.player.pk %}"><strong>New Record</strong> </a>
+                        <a href=" {% url 'logout' %}" class="button is-info is-outlined">
                         <strong>Log Out</strong>
                         </a>
                     </div>

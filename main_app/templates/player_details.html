@@ -9,8 +9,8 @@
         {% for record in player.records.all %}
             <div class="box is-flex-direction-row entry">
                 <a href="{% url 'game_details' record.game.pk %}">
-                    <div class="picture">
-                        <img class="image is-96x96" src="{{ record.game.cover_img }}" alt="">
+                    <div class="pic">
+                        <img class="image" src="{{ record.game.cover_img }}" alt="">
                     </div>
                 </a>
                     <div class="info is-flex-direction-column">
