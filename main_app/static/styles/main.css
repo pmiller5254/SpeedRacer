@@ -13,6 +13,11 @@ body {
     border: 2px solid gray;
 }
 
+.billboard-img{
+    width: 285px;
+    height: 380px;
+}
+
 .container{
     
     flex-wrap: wrap;
@@ -27,22 +32,71 @@ body {
 
 .title{
     position: relative;
-    margin: auto;
-    left: 45%;
+    top: 20px;
+    padding-bottom: 60px;
+    left: auto;
+    
 }
 
 .records{
-    margin: 0 auto;
+    position: relative;
+    right: 10%;
     display: inline-block;
     background-color: hsl(347, 90%, 96%);
     width: 40%;
-    border: 3px solid pink;
+    border: 3px solid silver;
 }
 
 .players{
-    margin:0 auto;
+    position: relative;
+    left: 10%;
     display: inline-block;
     width: 40%;
-    border: 3px solid springgreen;
+    border: 3px solid silver;
     justify-self: flex-end;
+}
+
+.formbox{
+    margin: auto;
+    width: 60%;
+    position: relative;
+    top: 30%;
+    border: 2px solid firebrick;
+    margin-top: 30%;
+    justify-content: center;
+}
+
+.signup{
+    background-color: hsl(347, 90%, 96%);
+    height: 50%;
+    display: flex;
+}
+
+.entry{
+    background-color: hsl(347, 90%, 96%);
+    border: 2px solid firebrick;
+    position: relative;
+    width: 35rem;
+    display: flex;
+    align-items: center;
+}
+
+.info{
+    margin-left: 10px;
+}
+
+
+.box .buttons{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    justify-self: flex-end;
+}
+
+.head{
+    display: flex;
+    background-color: indianred;
+    border: 1px solid firebrick;
+    min-height: 30px;
+    justify-content: center;
 }

@@ -2,15 +2,16 @@
 
 <div class="columns is-mobile">
     <div class="column is-10 is-offset-1 billboard" style="background-image: url('{{game.cover_img}}'); background-repeat: no-repeat; background-size: cover;">
-        <img src="{{ game.cover_img }}" alt="">
+        <img class="billboard-img" src="{{ game.cover_img }}" alt="">
     </div>
 </div>
 
 <h1 class="title">{{game.title}}</h1>
-<div class="container is-flex-direction-row">
-    <div class="records">
+<div class="container columns">
+    <div class="records column is-one-fourth">
+        <h2 class="head">{{ game.title }} Records</h2>
         {% for record in game.records.all %}
-        <div class="box" style="width: 18rem; background-color: firebrick;">
+        <div class="box entry is is-flex-direction-column">
             <h1>{{record.player}}</h1>
             <h1>{{record.description}}</h1>
             <h1>{{record.game}}</h1>
@@ -18,9 +19,12 @@
         {% endfor %}
     </div>
 
-    <div class="players">
+    <div class="players column is-one-fourth">
+        <div>
+            <h2 class="head">{{ game.title }} Players</h2>
+        </div>
         {% for record in game.records.all %}
-        <div class="box" style="width: 18rem; background-color: firebrick;">
+        <div class="box entry">
             <h1>{{record.player.name}}</h1>
         </div>
         {% endfor %}

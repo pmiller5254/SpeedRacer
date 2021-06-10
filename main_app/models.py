@@ -1,6 +1,6 @@
 
 from django.db import models
-from django.db.models import Model, CharField, TextField, BooleanField, DateTimeField, ManyToManyField
+from django.db.models import Model, CharField, TextField, BooleanField, DateTimeField, ManyToManyField, DateField
 
 # import user model from built in auth
 from django.contrib.auth.models import User
@@ -16,7 +16,7 @@ from django.db.models.fields import IntegerField
 class Game(Model):
 
     title = CharField(max_length=150)
-    release_date = CharField(max_length=70)
+    release_year = CharField(max_length=20)
     genre = CharField(max_length=50)
     cover_img = CharField(max_length=500)
     
@@ -45,7 +45,7 @@ class Record(Model):
         Player, on_delete=models.CASCADE, related_name="records")
     game = models.ForeignKey(
         Game, on_delete=models.CASCADE, related_name="records")
-    date = DateTimeField()
+    date = DateField()
     speed = IntegerField(default=0)
     description = TextField(max_length=1000)
 

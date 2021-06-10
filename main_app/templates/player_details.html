@@ -1,31 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 
-    <h1>{{player.name}}</h1>
+    <h1 class="title">{{player.name}}</h1>
 
-    <a class="button" href="{% url 'record_create' player.pk %}">New Record</a>
-    <form action="{% url 'record_create' player.pk %}">
-        {% csrf_token %} {{ form.as_p }}
-    </form>
-
+    
     <div>
         {% for record in player.records.all %}
-        <div class="box is-flex-direction-row" style="width: 30rem; background-color: firebrick; height: 10rem;">
-            <div class="picture">
-                <img class="image is-96x96" src="{{ record.game.cover_img }}" alt="">
-                <p>{{record.game}}</p>
+        <div class="box is-flex-direction-row entry">
+            <a href="{% url 'game_details' record.game.pk %}">
+                <div class="picture">
+                    <img class="image is-96x96" src="{{ record.game.cover_img }}" alt="">
+                </div>
+            </a>
+                <div class="info is-flex-direction-column">
+                        <h1 class="date">{{record.date}}</h1>
+                        <p>{{ record.description }}</p>
+                </div>
+                
+            <div class="buttons">
+                <a class="button is-dark" href="{% url 'record_update' record.pk %}">Edit</a>
+                <a class="button is-danger" href="{% url 'record_delete' record.pk %}">Delete</a>
             </div>
-            <div style="float: right;">   
-                <div>
-                    <h1>{{record.player}}</h1>
-                    <h1>{{record.description}}</h1>
-                </div>
-                <div class="buttons">
-                    <a class="button" href="{% url 'record_update' record.pk %}">Edit</a>
-                    <a class="button" href="{% url 'record_delete' record.pk %}">Delete</a>
-                </div>
-            </div> 
         </div>
         {% endfor %}
     </div>
+    <a class="button is-focused is-danger" href="{% url 'record_create' player.pk %}">New Record</a>
+        <form action="{% url 'record_create' player.pk %}">
+            {% csrf_token %} {{ form.as_p }}
+        </form>
 
 {% endblock %}
