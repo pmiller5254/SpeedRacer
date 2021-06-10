@@ -26,7 +26,7 @@ class Game(Model):
 
 class Player(Model):
     name = CharField(max_length=50)
-    img = CharField(max_length=500)
+    img = CharField(max_length=500, default="https://static.wikia.nocookie.net/mario/images/c/cd/Mario_Cap.png/revision/latest?cb=20180310022043")
     bio = TextField(max_length=500)
     games = ManyToManyField(Game)
     user = models.OneToOneField(

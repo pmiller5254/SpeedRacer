@@ -38,13 +38,13 @@ class GameDetail(DetailView):
 
     
 
-
+@method_decorator(login_required, name='dispatch')
 class PlayerDetail(DetailView):
     model = Player
     template_name = "player_details.html"
 
 
-
+@method_decorator(login_required, name='dispatch')
 class RecordCreate(CreateView):
     model = Record
     fields = ['game', 'date', 'speed', 'description']
@@ -57,6 +57,7 @@ class RecordCreate(CreateView):
     def get_success_url(self):
         return reverse('game_details', kwargs={'pk': self.object.game.pk})
 
+@method_decorator(login_required, name='dispatch')
 class RecordUpdate(UpdateView):
     model = Record
     fields = ['date', 'speed', 'description']
@@ -65,6 +66,7 @@ class RecordUpdate(UpdateView):
     def get_success_url(self):
         return reverse('player_details', kwargs={'pk': self.object.player.pk})
 
+@method_decorator(login_required, name='dispatch')
 class RecordDelete(DeleteView):
     model = Record
     template_name = "record_delete_confirmation.html"

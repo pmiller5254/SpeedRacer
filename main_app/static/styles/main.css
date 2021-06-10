@@ -6,11 +6,11 @@ body {
     margin: 0;
     min-height: 100vh;
     height: auto;
-    background-color: lightslategrey;
+    background-color: #D0CDD7;
 }
 
 .billboard{
-    border: 2px solid gray;
+    border: 2px solid #416165;
 }
 
 .billboard-img{
@@ -36,7 +36,7 @@ body {
     position: relative;
     top: 20px;
     padding-bottom: 60px;
-    left: auto;
+    left: 46%;
     
 }
 
@@ -78,11 +78,48 @@ body {
     display: flex;
     align-items: center;
 }
+.game-entry{
+    background-color: hsl(347, 90%, 96%);
+    border: 2px solid rgb(34, 168, 178);
+    position: relative;
+}
 
 .info{
     margin-left: 10px;
 }
 
+.profile{
+    padding-left: 0%;
+    padding-right: 0%;
+    border: 2px solid white;
+    background-color: #D9DBF1;
+}
+.profile-pic{
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    margin-bottom: 10px;
+}
+
+.info-box{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.pic{
+    border: .5px solid #D0CDD7;
+    display: flex;
+    max-width: 96px;
+}
+
+.image-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
 
 .box .buttons{
     position: absolute;
@@ -93,7 +130,8 @@ body {
 
 .head{
     display: flex;
-    background-color: indianred;
+    color: #D0CDD7;
+    background-color: #0B3948;
     border: 1px solid firebrick;
     min-height: 30px;
     justify-content: center;

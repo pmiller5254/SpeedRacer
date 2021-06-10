@@ -1,5 +1,7 @@
 # speedrace.io
 
+https://speedraceio.herokuapp.com/
+
 Welcome to Speedrace.io, the #1 place to record your speedrunning stats for every game out there.
 
 On our site, a user will be able to create a profile, with which they will interact with our wide index of games, most commonly sorted by highest amount of entries. They will also be able to add a profile image, games they would like to follow, other SpeedRacers they may like to follow, and have the ability to make entries. These entries will be shown on the view page for each game, or the profile page for each user, they are associated with. 

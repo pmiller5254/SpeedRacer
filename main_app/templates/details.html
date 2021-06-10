@@ -8,13 +8,19 @@
 
 <h1 class="title">{{game.title}}</h1>
 <div class="columns">
-    <div class="records column is-one-fourth is-offset-1">
+    <div class="records column is-5 is-offset-1">
         <h2 class="head">{{ game.title }} Records</h2>
         {% for record in game.records.all %}
-        <div class="box is-flex-direction-column">
-            <h1>{{record.player}}</h1>
-            <h1>{{record.description}}</h1>
-            <h1>{{record.game}}</h1>
+        <div class="box game-entry is-flex-direction-row">
+            <a href="{% url 'player_details' record.player.pk %}">
+                <div class="pic">
+                    <img class="image is-96x96" src="{{ record.player.img }}" alt="">
+                </div>
+            </a>
+            <div class="info is-flex-direction-column">     
+                <strong>Player:</strong><h1>{{record.player}}</h1>
+                <strong>Description:</strong><h1>{{record.description}}</h1>
+            </div>
         </div>
         {% endfor %}
     </div>
