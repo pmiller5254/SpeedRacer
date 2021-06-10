@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
     <h1 class="title">{{ player.name }}'s Profile</h1>
+   
 
     
     <div class="columns">
@@ -33,6 +34,20 @@
                 <strong>
                     {{player.bio}}
                 </strong>
+                <span>
+                    <a href="{% url 'player_update' player.pk %}">Edit</a>
+                </span>
+            </div>
+            <div class="foot">
+                <strong>Favorite Games</strong>
+                <div class="gamebox">
+                {% for game in player.games.all %}
+                <a href="{% url 'game_details' game.pk %}">
+                    <img src="{{ game.cover_img }}" alt="{{ game.title }}" class="cover">
+                </a>
+
+                {% endfor %}
+                </div>
             </div>
 
         </div>
