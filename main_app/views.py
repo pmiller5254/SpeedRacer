@@ -89,6 +89,7 @@ class Signup(View):
             Player.objects.create(
                 user = user,
                 name = request.POST["username"],
+                bio = "A new Speedracer!"
             )
             login(request, user)
             return redirect("home")

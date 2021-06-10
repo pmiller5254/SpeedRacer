@@ -43,15 +43,15 @@ body {
 .records{
     padding: 0%;
     position: relative;
-    background-color: hsl(347, 90%, 96%);
-    border: 1px solid firebrick;
+    background-color:  #D0CDD7;
 }
 
 .players{
     padding: 0%;
     position: relative;
-    border: 1px solid firebrick;
     justify-self: flex-end;
+    background-color:  #D0CDD7;
+
 }
 
 .formbox{
@@ -79,7 +79,7 @@ body {
     align-items: center;
 }
 .game-entry{
-    background-color: hsl(347, 90%, 96%);
+    background-color: #ACB0BD;
     border: 2px solid rgb(34, 168, 178);
     position: relative;
 }
@@ -135,4 +135,5 @@ body {
     border: 1px solid firebrick;
     min-height: 30px;
     justify-content: center;
+    margin-bottom: 10px;
 }
