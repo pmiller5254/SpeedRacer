@@ -1,4 +1,4 @@
-# speedrace.io
+# SpeedRace.io
 
 https://speedraceio.herokuapp.com/
 

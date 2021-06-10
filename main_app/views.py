@@ -35,6 +35,7 @@ class Games(TemplateView):
 class GameDetail(DetailView):
     model = Game
     template_name ="details.html"
+    
 
     
 

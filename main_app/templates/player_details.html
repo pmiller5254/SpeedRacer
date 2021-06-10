@@ -37,9 +37,6 @@
 
         </div>
     </div>
-    <a class="button is-focused is-danger" href="{% url 'record_create' player.pk %}">New Record</a>
-        <form action="{% url 'record_create' player.pk %}">
-            {% csrf_token %} {{ form.as_p }}
-        </form>
+       
 
 {% endblock %}

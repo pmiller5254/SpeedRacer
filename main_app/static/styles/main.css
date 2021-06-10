@@ -53,6 +53,11 @@ body {
     background-color:  #D0CDD7;
 
 }
+.gamecard:hover{
+    background-color: hsl(206, 70%, 96%);
+    color: #0B3948;
+
+}
 
 .formbox{
     margin: auto;

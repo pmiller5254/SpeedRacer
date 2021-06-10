@@ -37,9 +37,10 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a href=" {% url 'player_details' user.player.pk %}" class="button is-danger is-outlined">
-                            <strong>{{ user.username }} </strong>
-                        </a>
+                      <a href=" {% url 'player_details' user.player.pk %}" class="button is-danger is-outlined">
+                        <strong>{{ user.username }} </strong>
+                      </a>
+                      <a class="button is-outlined is-danger" href="{% url 'record_create' user.player.pk %}"><strong>New Record</strong> </a>
                         <a href=" {% url 'logout' %}" class="button is-danger is-outlined">
                         <strong>Log Out</strong>
                         </a>
