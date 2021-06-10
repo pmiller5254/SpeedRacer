@@ -14,6 +14,8 @@ body {
 }
 
 .billboard-img{
+    border: 1px white solid;
+    box-shadow: gray;
     width: 285px;
     height: 380px;
 }
@@ -39,20 +41,16 @@ body {
 }
 
 .records{
+    padding: 0%;
     position: relative;
-    right: 10%;
-    display: inline-block;
     background-color: hsl(347, 90%, 96%);
-    width: 40%;
-    border: 3px solid silver;
+    border: 1px solid firebrick;
 }
 
 .players{
+    padding: 0%;
     position: relative;
-    left: 10%;
-    display: inline-block;
-    width: 40%;
-    border: 3px solid silver;
+    border: 1px solid firebrick;
     justify-self: flex-end;
 }
 

@@ -7,24 +7,25 @@
 </div>
 
 <h1 class="title">{{game.title}}</h1>
-<div class="container columns">
-    <div class="records column is-one-fourth">
+<div class="columns">
+    <div class="records column is-one-fourth is-offset-1">
         <h2 class="head">{{ game.title }} Records</h2>
         {% for record in game.records.all %}
-        <div class="box entry is is-flex-direction-column">
+        <div class="box is-flex-direction-column">
             <h1>{{record.player}}</h1>
             <h1>{{record.description}}</h1>
             <h1>{{record.game}}</h1>
         </div>
         {% endfor %}
     </div>
+    <div class="column is-2"></div>
 
     <div class="players column is-one-fourth">
         <div>
             <h2 class="head">{{ game.title }} Players</h2>
         </div>
         {% for record in game.records.all %}
-        <div class="box entry">
+        <div class="box">
             <h1>{{record.player.name}}</h1>
         </div>
         {% endfor %}
