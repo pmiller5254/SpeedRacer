@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="columns is-mobile">
+    <div class="column is-10 is-offset-1 billboard" style="background-image: url('{{game.cover_img}}'); background-repeat: no-repeat; background-size: cover;">
+        <img class="billboard-img" src="{{ game.cover_img }}" alt="">
+    </div>
+</div>
+
+<h1 class="title">{{game.title}}</h1>
+<div class="columns">
+    <div class="records column is-5 is-offset-1">
+        <h2 class="head">{{ game.title }} Records</h2>
+        {% for record in game.records.all %}
+        <div class="box game-entry is-flex-direction-row">
+            <a href="{% url 'player_details' record.player.pk %}">
+                <div class="pic">
+                    <img class="image is-96x96" src="{{ record.player.img }}" alt="">
+                </div>
+            </a>
+            <div class="info is-flex-direction-column">     
+                <strong>Player:</strong><h1>{{record.player}}</h1>
+                <strong>Description:</strong><h1>{{record.description}}</h1>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="column is-2"></div>
+
+    <div class="players column is-one-fourth">
+        <div>
+            <h2 class="head">{{ game.title }} Players</h2>
+        </div>
+        <div class="box game-entry">
+        {% for record in game.records.all %}
+            <a href="{% url 'player_details' record.player.pk %}">
+                <img class="gamers" src="{{ record.player.img }}" alt="{{ record.player.name }}">
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

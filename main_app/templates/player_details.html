@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+
+    <h1 class="title">{{ player.name }}'s Profile</h1>
+   
+
+    
+    <div class="columns">
+        <div class="column is-6">
+        {% for record in player.records.all %}
+            <div class="box is-flex-direction-row entry">
+                <a href="{% url 'game_details' record.game.pk %}">
+                    <div class="pic">
+                        <img class="image" src="{{ record.game.cover_img }}" alt="">
+                    </div>
+                </a>
+                    <div class="info is-flex-direction-column">
+                            <h1 class="date">{{record.date}}</h1>
+                            <p>{{ record.description }}</p>
+                    </div>
+                    
+                <div class="buttons">
+                    <a class="button is-dark" href="{% url 'record_update' record.pk %}">Edit</a>
+                    <a class="button is-danger" href="{% url 'record_delete' record.pk %}">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="column is-4 is-offset-2 profile">
+            <div class="image-box">
+                    <img class="profile-pic" src="{{ player.img }}" alt="">
+                    <strong>{{ player.name }}</strong>
+            </div>
+            <div class="info-box">
+                <strong>
+                    {{player.bio}}
+                </strong>
+                <span>
+                    <a href="{% url 'player_update' player.pk %}">Edit</a>
+                </span>
+            </div>
+            <div class="foot">
+                <strong>Favorite Games</strong>
+                <div class="gamebox">
+                {% for game in player.games.all %}
+                <a href="{% url 'game_details' game.pk %}">
+                    <img src="{{ game.cover_img }}" alt="{{ game.title }}" class="cover">
+                </a>
+
+                {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+       
+
+{% endblock %}

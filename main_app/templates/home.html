@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title">Home</h1>
+<div class="games_list columns container">
+    {% for game in games %}
+    <a class="home-games" href="{% url 'game_details' game.pk %}">
+    <div class="card column is-4 gamecard" style="width: 18rem; margin: auto;">
+        <div class="card-image">
+           <figure class="image is-3by4"> 
+               <img src="{{game.cover_img}}"alt="{{game.title}}">
+            </figure>
+        </div>
+        <div class="card-content">
+          <h5 class="card-title">{{game.title}}</h5>
+          <p class="card-text">{{game.release_date}}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

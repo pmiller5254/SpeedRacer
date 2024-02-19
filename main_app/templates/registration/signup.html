@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title">Sign Up!</h1>
+
+
+  <div class="box formbox signup">
+    <form method="post" action="{% url 'signup' %}">
+      {% csrf_token %}{{ form.errors }}
+        <p>
+            <label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username"> 
+        </p>
+        <p>
+            <label for="id_password1">Password:</label> <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1"> 
+        </p>
+        <p>
+            <label for="id_password2">Password:</label> <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2"></br> <span class="helptext">Enter the same password as before, for verification.</span>
+        </p>
+      <input type="submit" class="btn" value="Sign up" />
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </div>
+
+{% endblock %}
