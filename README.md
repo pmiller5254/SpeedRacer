@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SpeedRace.io
 
 https://speedraceio.herokuapp.com/
@@ -27,3 +28,7 @@ To run this program as a developer, simply clone down this repo and
 
 
 In the future, the app will support video players (complete with timestamps) on the site to view the record breaking event and a moderation team to review and verify such entries.
+=======
+# SpeedRacer
+A place for gamers to record their high scores. SpeedRacer - Beat That!
+>>>>>>> speedrace/main
